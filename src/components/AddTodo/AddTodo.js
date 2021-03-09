@@ -9,6 +9,7 @@ const AddTodo = (props) => {
             e.preventDefault();
             let input = e.target.userInput.value;
             props.dispatch(addTodo(input));
+            e.target.userInput.value = '';
         }}>
              <input type="text" name="userInput"/>
              <button>Submit</button>
