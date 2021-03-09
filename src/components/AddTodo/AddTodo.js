@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { addTodo } from '../../actions'
 
 const AddTodo = (props) => {
     return (
@@ -7,7 +8,7 @@ const AddTodo = (props) => {
             onSubmit={(e) => {
             e.preventDefault();
             let input = e.target.userInput.value;
-            console.log(input);
+            props.dispatch(addTodo(input));
         }}>
              <input type="text" name="userInput"/>
              <button>Submit</button>
