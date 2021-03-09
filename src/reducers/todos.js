@@ -15,8 +15,12 @@ const todos = (state = initialState, action) => {
                 },
              ],
           };
-       case "ADD_TODO" : 
-          return {};
+       case "DELETE_TODO" : 
+          const todos = state.data.filter((todo) => todo.id !== action.id);
+          return {
+             ...state,
+             data : todos,
+          };
        default: 
           return state;
    }

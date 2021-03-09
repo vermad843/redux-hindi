@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {deleteTodo} from '../../actions';
 
 const List = (props) => {
     return (
@@ -8,6 +9,10 @@ const List = (props) => {
                 props.todos.map((todo, i) => (
                     <li key = {i}>
                         {todo.message}
+                        <button
+                          onClick = {() => props.dispatch(deleteTodo(todo.id))}
+                          >Delete
+                        </button>
                     </li>
                 ))
             }
